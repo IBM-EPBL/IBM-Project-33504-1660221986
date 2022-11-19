@@ -1,0 +1,78 @@
+<body>
+   <br>
+<center><h4>PLASMA DONATION REQUESTS</h4></center>
+<br>
+<center><p color="white">{{msg}}</p></center>
+<br>
+<center>
+    <table border = 1 cellpadding = "5">
+ <thead>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Gender</td>
+    <td>Mobile No</td>
+    <td>Email</td>
+    <td>City</td>
+    <td>Address</td>
+    <td>Bloodgroup</td>
+    <td>Any Issue</td>
+    <td>Last Blood Donated Date</td>
+    <td>Book Slot</td>
+    <td>Delete</td>
+ </thead>
+ {% for row in donar %}
+    <tr>
+       <td>{{row["NAME"]}}</td>
+       <td>{{row["AGE"]}}</td>
+       <td>{{row["GENDER"]}}</td>
+       <td>{{row['MNUMB']}}</td>	
+       <td>{{row['EMAIL']}}</td>	
+       <td>{{row['CITY']}}</td>
+       <td>{{row['ADDRESS']}}</td>	
+       <td>{{row['BLOODGROUP']}}</td>		
+       <td>{{row['ISSUE']}}</td>	
+       <td>{{row['LASTBD']}}</td>	
+       <td>{{row['SLOT']}}</td>	
+       <td><a href="/delete/{{row['NAME']}}">Delete</a></td>	
+    </tr>
+ {% endfor %}
+</table>
+</center>
+<a href="/admin" class="previous">&laquo; Go Back</a> 
+</body>
+<style>
+   body{
+      background-image: url('https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/Love%20and%20Liberty%20(1).jpg');
+   }
+   table{
+      color:rgb(255, 255, 255);
+      border-color: goldenrod;
+      border-radius: 12px;
+      border-width: 2px;
+   }
+   h4{
+      color:goldenrod;
+      font-size: larger;
+      -webkit-text-stroke: 0.5px;
+      -webkit-text-stroke-color: rgb(255, 255, 255);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   }
+   a {
+      margin-left: 15px;
+      text-decoration: none;
+      display:inline-block;
+      padding: 8px 16px;
+   }
+
+   a:hover {
+  background-color: rgb(87, 255, 2);
+  color:black;
+   }
+
+   .previous {
+  background-color: rgb(255, 255, 255);
+  color: black;
+   }
+
+
+</style>
