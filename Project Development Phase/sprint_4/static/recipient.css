@@ -1,0 +1,65 @@
+.marquee{
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-color:brown;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:yellow;
+}
+
+.foot{
+    /* background-color: tan; */
+    background-image: url('	https://wallpaperaccess.com/full/4760769.jpg');
+    /* background-image: url('	https://www.burchcom.com/wp-content/uploads/2019/01/images1997-5c2f99436aa28-1024x683.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+h3{
+    color: aliceblue;
+}
+
+table{
+    font-family: Calibri; 
+    color:rgb(255, 255, 255); 
+    font-size: 11pt; 
+    font-style: normal;
+    font-weight: bold;
+    /* text-align:;  */
+    background-color: none;
+    border-collapse: collapse; 
+    border: none;
+    border-radius: 15px;
+  }
+  table.inner{
+    border: 0px
+  }
+  
+  form{
+      margin-top :50px;
+      width: 35rem;
+      height: 28rem;
+      display: flex;
+      flex-direction: column;
+      background: rgba(255,255,255,0.06);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,.40);
+      border-radius: 35px;
+      border: 1px solid rgba(255,255,255,0.3);
+      
+  }
+
+button a:link { 
+    text-decoration: none;
+    color: white;
+}
+button a:visited { text-decoration: none; color:#ffffff;}
+
+button a:hover { text-decoration: none; color:#ffffff; }
+
+a:active { text-decoration: none; }
+a:hover { text-decoration: none; color:#ffffff; }
+a:visited { text-decoration: none; color:#ffffff;}
+
+p{
+    color: #ffffff;
+}

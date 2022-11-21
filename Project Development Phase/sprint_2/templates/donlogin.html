@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Donor Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="../static/logincss.css">
+
+</head>
+<center><h4 style="color:black;">Donor Login</h4></center>
+<body>
+
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <form id="login-form">
+    <p>
+    <input type="text" id="email" name="email" placeholder="Enter your email" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="password" style="font-size : 15px; outline: none;" id="password" name="password" placeholder="Enter your password" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+      <a href="/donar">
+        <button type="button" style="border-radius: 10px; size:40px; font-size: 20px; background-color: #852999; outline: none; border: none; padding: 5px;" class="btn btn-success">Log in</button>
+        </a>
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p>Are you New ? <a href="/donregistration">Create Account</a><p>
+  </div><!--create-account-wrap-->
+</div><!--login-form-wrap-->
+<!-- partial -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  setTimeout(function(){
+      $('.loader_bg').fadeToggle();
+  }, 1600);
+</script>  
+
+</body>
+</html>
