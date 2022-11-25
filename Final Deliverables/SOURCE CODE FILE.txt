@@ -1,0 +1,989 @@
+                                                   HTML FILES
+adminlogin.html
+------------------
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../static/adminlogin.css">
+
+</head>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Admin Panel</h1>
+		<p style="color:black">Good governance depends on ability to take responsibility
+			 by both administration as well as people... Donate Blood Save Life</p>
+		<span>
+			<!-- <a href="#"><i class="bi bi-google" aria-hidden="true"></i></a>  -->
+		</span>
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>Admin</h5>		<!-- <p>Don't have an account? <a href="#">Creat Your Account</a> it takes less than a minute</p> -->
+		<div class="inputs">
+			<input type="text" placeholder="user id">
+			<br>
+			<input type="password" placeholder="password">
+		</div>
+			
+			<br><br>
+			
+		<div class="remember-me--forget-password">
+				<!-- Angular -->
+	<!-- <label>
+		<input type="checkbox" name="item" />
+		<span class="text-checkbox">Remember me</span>
+	</label> -->
+	<br>
+			<button><a href="/admin">Login</a></button>
+			<!-- <p>forget password?</p> -->
+		</div>
+			
+			
+			<br>
+			<p>Don't have an account? <a href="/adminreg">Create Your Account</a> it takes less than a minute</p>
+	</div>
+	
+</div>
+<!-- partial -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	setTimeout(function(){
+		$('.loader_bg').fadeToggle();
+	}, 1600);
+  </script>
+
+</body>
+</html>
+
+adminreg.html
+------------------
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin sign-up</title>
+	  <link rel="stylesheet" href="../static/adminreg.css" />
+  </head>
+  <body>
+    <h1 class="black-clr">Admin sign-up</h1>
+    <form name="admin" action="adminlogin.html" onsubmit="return validateForm()" method='post'>
+      <fieldset>
+        <label class="black-clr">Enter Your Hospital/ Institution Name: <input type="text" name="hname" id="hiname" required /></label>
+        <label class="black-clr">Enter Register-Id: <input type="text" name="regid" id="reg" required /></label>
+        <label class="black-clr">Enter Your Email: <input type="email" name="email" id="mail" required /></label>
+        <label class="black-clr">Enter User-id: <input type="text" name="Userid" id="user" required /></label>
+        <label class="black-clr">Create a New Password: <input type="password" name="password" id="ipass"  required pattern="[a-zA-Z0-9]+" /></label>
+      </fieldset>
+      <fieldset>
+        <input type="radio" name="account-type" class="inline" /> Hospital &nbsp;&nbsp; <input type="radio" name="account-type" class="inline black-clr" /> Medical Institution
+        <label>
+          <input type="checkbox" name="terms" class="inline" required /> I accept the <a href="#">terms and conditions</a>
+			  </label>
+      </fieldset>
+      <center>
+      <button class="btn btn-success btn-lg"><a href="/adminlogin">Submit</a></button></center>
+    </form>
+  </body>
+  <script>
+    function validateForm(){
+    var hname=document.admin.hname.value;
+    if(hname.length==0 || hname==""){
+        alert("Hospital name must be filled out");
+        return false;  
+    }
+
+    var regid=document.admin.regid.value;
+    if(reg.length==0 || regid.length < 6){
+        alert("Register-Id required!");
+        return false;
+    }
+
+    var email=document.admin.email.value;
+    if(email.length==0){
+        alert("Email required!");
+        return false;
+    }
+
+    var Userid=document.admin.Userid.value;
+    if(userid.length==0){
+        alert("User-Id required!");
+        return false;
+    }
+
+    var password=document.admin.password.value;
+    if(password.length < 8){
+        alert("condition not satisfied");
+        return false;
+    }
+
+  }
+  </script>
+
+  
+
+</html>
+
+donlogin.html
+--------------
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Donor Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="../static/logincss.css">
+
+</head>
+<center><h4 style="color:black;">Donor Login</h4></center>
+<body>
+
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <form id="login-form">
+    <p>
+    <input type="text" id="email" name="email" placeholder="Enter your email" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="password" style="font-size : 15px; outline: none;" id="password" name="password" placeholder="Enter your password" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+      <a href="/donar">
+        <button type="button" style="border-radius: 10px; size:40px; font-size: 20px; background-color: #852999; outline: none; border: none; padding: 5px;" class="btn btn-success">Log in</button>
+        </a>
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p>Are you New ? <a href="/donregistration">Create Account</a><p>
+  </div><!--create-account-wrap-->
+</div><!--login-form-wrap-->
+<!-- partial -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  setTimeout(function(){
+      $('.loader_bg').fadeToggle();
+  }, 1600);
+</script>  
+
+</body>
+</html>
+
+donregistration.html
+---------------------
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Donar sign-up</title>
+  <link rel="stylesheet" type="text/css" href="../static/reciptreg.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+<head>
+
+
+</head>
+ 
+<body>
+  <center>
+
+    <h3 class="black-clr">DONAR SIGN-UP</h3>
+<form action="{{ url_for('donrec') }}" method="POST">
+ 
+<table align="center" cellpadding = "10">
+ 
+<!----- First Name ---------------------------------------------------------->
+<tr>
+<td class="black-clr">FIRST NAME</td>
+<td><input type="text" name="fname" id="finame" maxlength="30" required/>
+
+</td>
+</tr>
+ 
+<!----- Last Name ---------------------------------------------------------->
+<tr>
+<td class="black-clr">LAST NAME</td>
+<td><input type="text" name="lname" id="liname" maxlength="30" required/>
+
+</td>
+</tr>
+ 
+<!----- Date Of Birth -------------------------------------------------------->
+<tr>
+<td class="black-clr">DATE OF BIRTH</td>
+ 
+<td>
+<input type="date" name="dob" id="day" required/>
+
+</select>
+</td>
+</tr>
+ 
+<!----- Email Id ---------------------------------------------------------->
+<tr>
+<td class="black-clr">EMAIL ID</td>
+<td><input type="text" name="email" id="mail" maxlength="100" required/></td>
+</tr>
+ 
+<!----- Mobile Number ---------------------------------------------------------->
+<tr>
+<td class="black-clr">MOBILE NUMBER</td>
+<td>
+<input type="text" name="mnumb" id="numb" maxlength="10" required/>
+(10 digit number)
+</td>
+</tr>
+ 
+<!----- Gender ----------------------------------------------------------->
+<tr>
+<td class="black-clr">GENDER</td>
+<td>
+<input type="radio" name="gender" value="Male" />Male 
+<input type="radio" name="gender" value="Female" />Female 
+</td>
+</tr>
+ 
+<!----- Address ---------------------------------------------------------->
+<tr>
+<td class="black-clr">ADDRESS <br /><br /><br /></td>
+<td><textarea name="address" rows="4" cols="30"></textarea></td>
+</tr>
+ 
+<!----- City ---------------------------------------------------------->
+<!-- <tr>
+<td>CITY</td>
+<td><input type="text" name="City" maxlength="30" />
+(max 30 characters a-z and A-Z)
+</td>
+</tr> -->
+ 
+<!----- Pin Code ---------------------------------------------------------->
+<tr>
+<td class="black-clr">PIN CODE</td>
+<td><input type="text" name="pin" id="ipin" maxlength="6" />
+(6 digit number)
+</td>
+</tr>
+ 
+<!----- State ---------------------------------------------------------->
+<tr>
+<td class="black-clr">PASSWORD</td>
+<td><input type="password" name="password" id="pass" maxlength="20" required/>
+<!-- (max 30 characters a-z and A-Z) -->
+</td>
+</tr>
+ 
+<!----- Country ---------------------------------------------------------->
+<tr>
+<td class="black-clr">CONFIRM PASSWORD</td>
+<td><input type="password" name="cpassword" id="cpass" required></td>
+</tr>
+   
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+  <!-- <button type="button  -->
+    
+  <!-- <button type="button" class="w3-button w3-green" value="button"><a href="/donarlogin">Submit</a></button> -->
+  <input type="submit" value="Submit">
+
+</td>
+</tr>
+</table>
+
+<!-- <button  type="button" class="w3-button w3-green" value="Submit">Submit</button>
+<button type="button" class="w3-button w3-light-green" value="Reset">Reset</button> -->
+ 
+</form>
+</center>
+</body>
+<script>
+  function validateForm(){
+    var returnval=true;
+    clearErrors();
+    var finame=document.forms['donar']["fname"].value;
+    if(finame.length==0){
+        alert("first name must be filled out");
+        return false;  
+    }
+
+    var liname=document.forms['donar']["lname"].value;
+    if(liname.length==0){
+        alert("last name must be filled out");
+        return false; 
+    } 
+
+    var mail=document.forms['donar']["email"].value;
+    if(mail.length==0){
+        alert("Email required!");
+        return false;
+    }
+
+    var numb=document.forms['donar']["mnumb"].value;
+    if(numb.length<10){
+        alert("Mobile number Invalid!");
+        return false;
+    }
+
+    // var pass = document.getElementById("password");  
+    // var cpass = document.getElementById("cpassword"); 
+    var pass = document.forms['donar']["password"].value;  
+    var cpass = document.forms['donar']["cpassword"].value;  
+    if(pass != cpass)  
+    {   
+      alert("Passwords did not match");  
+    } else {  
+      alert("Password created successfully");  
+  }  
+
+  }
+
+</script>
+</html>
+<!-- partial -->
+<br>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	setTimeout(function(){
+		$('.loader_bg').fadeToggle();
+	}, 1600);
+  </script>
+</body>
+</html>
+
+index.html
+--------------
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/fav.jpg">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/fontawsom-all.min.css">
+    <link rel="stylesheet" href="../static/grid-gallery.min.css">
+    <link rel="stylesheet" href="../static/grid-gallery.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <title>Home page</title>
+
+</head>
+
+<body>
+    <div class="loader_bg">
+        <div class="loader"></div>
+      </div>
+    
+
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/" class="nav-link px-2 text-white"><b>Home</b></a></li> &nbsp;&nbsp;
+                    <li><a href="#" class="nav-link px-2 text-white"><b>About</b></a></li> &nbsp;&nbsp;
+                    <li><a href="#" class="nav-link px-2 text-white"><b>Blogs</b></a></li> &nbsp;&nbsp;
+                    <li><a href="#" class="nav-link px-2 text-white"><b>Camps</b></a></li>
+                </ul>
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-secondary"><a href="/adminlogin">Admin Login</a></button>
+                    <button type="button" class="btn btn-outline-info"><a href="/recipientlogin">Looking for plasma?</a></Looking></button>
+                    <button type="button" class="btn btn-outline-warning"><a href="/donarlogin">Donate Now!</a></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="slider-detail">
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/slide-03.jpg" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class=" bounceInDown">Donate Plasma & Save a Life</h5>
+                        <p class=" bounceInLeft">"A donation of blood means a few minutes to you, but a lifetime for somebody else."<br>
+                            "A small step towards blood donation can give life to someone’s special."<br>
+                            "Every blood donor is a life saver."</p>
+
+                        <div class=" vbh">
+
+                            <div class="btn btn-success  bounceInUp">DONATE NOW!</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/slide-02.jpg" alt="Third slide">
+                    <div class="carousel-caption vdg-cur d-none d-md-block">
+                        <h5 class=" bounceInDown">Donate Blood & Save a Life</h5>
+                        <p class=" bounceInLeft">"A donation of blood means a few minutes to you, but a lifetime for somebody else."<br>
+                            "A small step towards blood donation can give life to someone’s special."<br>
+                            "Every blood donor is a life saver."</p>
+
+                        <div class=" vbh">
+
+                            <div class="btn btn-danger  bounceInUp"> Donate Now </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+
+    </div>
+    
+    <!--*************** About Us Starts Here ***************-->
+   <section id="about" class="contianer-fluid about-us">
+       <div class="container">
+           <div class="row session-title">
+               <h2><u>About Us</u></h2>
+              
+           </div>
+            <div class="row">
+                <div class="col-md-6 text">
+                    <h2>About Plasma Donars</h2>
+                    <p>when a patient needs plasma, he/she has to contact a Medical center or a compatible blood group of a donor in their circle, family, and friends. However, it is difficult to find suitable donor within a limited group of people in a given time. In addition, there is no guarantee that Medical center will have compatible plasma in stock. There is also steady increase in plasma donation requests posts in social networking sites (like Facebook, twitter, Instagram, etc.) requesting for donation.</p>
+                    <p>Ease of access, requirements of plasma, and the plasma donation statistics are taken into consideration while researching the topic. There is a steady need for plasma.</p>
+                    <p>Although this application helps finding donors, but the ease of communication with those donors is not prompt and it requires man power as the requester (patient or clinic) has to contact each donor individually. Also, there is no application that provides a proper communication channel to notify donors about the plasma donation requirements.</p>
+                    <p>Our application provides donors with functionalities including “plasma request”, “Ask for donation”, “share with friend”,(slot alloted to donate plasma), at the same time the recipient can send requests and use this application to maintain the donation activities.</p>
+                </div>
+                <div class="col-md-6 image">
+                    <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/about.jpg" alt="">
+                </div>
+            </div>
+       </div>
+   </section>
+    
+          
+    
+      <!-- ################# Gallery Start Here #######################--->
+     
+    <div id="gallery" class="gallery container-fluid">
+        <div class="container">
+            <div class="row session-title">
+                <h2><u>Checkout Our Gallery</u></h2>
+            </div>
+            <div class="gallery-row row">
+                    <div id="gg-screen"></div>
+                    <div class="gg-box">
+                            <div class="gg-element">
+                                <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g1.jpg">
+                            </div>
+                            <div class="gg-element">
+                                <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g2.jpg">
+                            </div>
+                            <div class="gg-element">
+                                <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g3.jpg">
+                            </div>
+                            <div class="gg-element">
+                                <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g4.jpg">
+                            </div>
+                            <div class="gg-element">
+                                <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g5.jpg">
+                            </div>
+                            <div class="gg-element">
+                                <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g6.jpg">
+                            </div>
+                            <div class="gg-element">
+                                <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g7.jpg">
+                            </div>
+                            <div class="gg-element">
+                                <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g8.jpg">
+                            </div>
+                            <div class="gg-element">
+                                <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g9.jpg">
+                            </div>
+                            <div class="gg-element">
+                                <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g10.jpg">
+                            </div>
+                            
+                            
+                          </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+     <!-- ################# Donation Process Start Here #######################--->
+     
+     <section id="process" class="donation-care">
+         <div class="container">
+           <div class="row session-title">
+               <h2><u>Donation Process</u></h2>
+               <!-- <p><b>The donation process from the time you arrive center until the time you leave.</b></p> -->
+           </div>
+            <div class="row">
+                 <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                     <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g1.jpg" alt="">
+                     <h4><b>1 - </b>Registration</h4>
+                     <p>When you arrive at a plasma center, you will check in at the front desk. You will need to show a valid photo ID, proof of address, and proof of social security.</p>
+                     <button class="btn btn-sm btn-danger"><a href="#">Readmore </a><i class="fas fa-arrow-right"></i></button>
+                     </div>
+                 </div>
+                 <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                     <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g2.jpg" alt="">
+                        <h4><b>2 - </b>Screening</h4>
+                     <p>During the screening, you will give a blood sample and get your vital signs checked, including your blood pressure, pulse, and temperature</p>
+                     <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                     </div>
+                 </div>
+                 <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                     <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g4.jpg" alt="">
+                        <h4><b>3 - </b>Physical Exam</h4>
+                     <p> The first time you give plasma, you will receive a brief physical exam given by a trained medical specialist to make sure you stay in good health.</p>
+                     <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                     </div>
+                 </div>
+                 <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                        <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/g1.jpg" alt="">
+                        <h4><b>4 - </b>Donation</h4>
+                         <p>After approval, plasma center staff will set you up at a plasmapheresis machine that collects whole blood from a vein in your arm and it separates out the plasma.</p>
+                         <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                    </div> 
+                 </div>
+            </div>
+            
+             
+         </div>
+     </section>
+              <!--################### Our Blog Starts Here #######################--->
+              <div id="blog" class="blog-container contaienr-fluid">
+                <div class="container">
+                    <div class="session-title row">
+                      <h2><u>Latest Blog</u></h2>
+                      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit consectetur adipiscing elit.</p> -->
+                    </div>
+                    <div class="row news-row">
+                        <div class="col-md-6">
+                            <div class="news-card">
+                                <div class="image">
+                                    <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/blog_01.jpg" alt="">
+                                </div>
+                                <div class="detail">
+                                    <h3>Give Thanks, Give Blood</h3>
+                                    <p>Blood donors share life. And for that, thousands of people are thankful that blood donors give generously. After donating blood,we wants to thank our loyal platelet donors with a t-shirt they can wear loud and proud... </p>
+                                    <p class="footp">
+                                        10 Comments <span>/</span>
+                                        Blog Design <span>/</span>
+                                        Read More
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="news-card">
+                                <div class="image">
+                                    <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/blog_02.jpg" alt="">
+                                </div>
+                                <div class="detail">
+                                    <h3>Donar Celebrate Milestone</h3>
+                                    <p>A few Greenwood donors have gone above and beyond in their blood donation journeys to save hundreds of local lives! These donors are great examples of loyal, local lifesavers Thank you for your continuous blood donations!</p>
+                                    <p class="footp">   
+                                        17 Comments <span>/</span>
+                                        Blog Design <span>/</span>
+                                        Read More
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="news-card">
+                                <div class="image">
+                                    <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/blog_03.jpg" alt="">
+                                </div>
+                                <div class="detail">
+                                    <h3>Plasma Donation Do’s and Don’ts</h3>
+                                    <p>Whether you’re a new or returning plasma donor, or someone who is curious about giving plasma, you probably have some questions about the donation process. In this blog, we’re breaking down the do’s and don’ts of plasma donation... </p>
+                                    <p class="footp">
+                                        09 Comments <span>/</span>
+                                        Blog Design <span>/</span>
+                                        Read More
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="news-card">
+                                <div class="image">
+                                    <img src="https://model001.s3.jp-tok.cloud-object-storage.appdomain.cloud/blog_04.jpg" alt="">
+                                </div>
+                                <div class="detail">
+                                    <h3>How often can I donate plasma?</h3>
+                                    <p>To ensure your continued health and safety during plasma donation, there are Have you decided to donate blood for research? By donating blood for research purposes, you are contributing to the medical and scientific breakthroughs... </p>
+                                    <p class="footp">
+                                        14 Comments <span>/</span>
+                                        Blog Design <span>/</span>
+                                        Read More
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-dark text-center text-white">
+
+            
+                  </section>
+                  <!-- Section: Social media -->
+                </div>
+                <!-- Grid container -->
+              
+                <!-- Copyright -->
+                
+                  
+                <!-- Copyright -->
+              </footer>
+
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    setTimeout(function(){
+        $('.loader_bg').fadeToggle();
+    }, 1600);
+</script>
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "6043dfe7-5b99-49ee-99ed-2d05537340f9", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "26b5b847-d411-43f0-af69-4cd200aed370", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</body>
+
+        <script src="../js/jquery-3.2.1.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/grid-gallery.min.js"></script>
+        <script src="../js/jquery-scrolltofixed-min.js"></script>
+        <script src="../js/script.js"></script>
+        <script src="../js/grid-gallery.js"></script>
+
+
+
+</html>
+
+
+recipregistration.html
+-----------------------
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Recipient sign-up</title>
+  <link rel="stylesheet" type="text/css" href="../static/reciptreg.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+<head>
+
+</head>
+ 
+<body>
+  <div class="loader_bg">
+    <div class="loader"></div>
+  </div>
+  <center>
+
+    <h3>RECIPIENT SIGN-UP</h3>
+    <center><p>{{msg}}</p></center>
+     <form action="{{ url_for('recipientrec') }}" method="POST"> 
+ 
+      <!--  -->
+
+<table align="center" cellpadding = "10">
+ 
+<!----- First Name ---------------------------------------------------------->
+<tr>
+<td>FIRST NAME</td>
+<td><input type="text" name="fname" id="finame" maxlength="30" required/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+ 
+<!----- Last Name ---------------------------------------------------------->
+<tr>
+<td>LAST NAME</td>
+<td><input type="text" name="lname" id="liname" maxlength="30" required/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+ 
+<!----- Date Of Birth -------------------------------------------------------->
+<tr>
+<td>DATE OF BIRTH</td>
+ 
+<td>
+<input type="date" name="dob" id="day" required/>
+
+</select>
+</td>
+</tr>
+ 
+<!----- Email Id ---------------------------------------------------------->
+<tr>
+<td>EMAIL ID</td>
+<td><input type="text" name="email" id="mail" maxlength="100" required/></td>
+</tr>
+ 
+<!----- Mobile Number ---------------------------------------------------------->
+<tr>
+<td>MOBILE NUMBER</td>
+<td>
+<input type="text" name="mnumb" id="numb" maxlength="10" required/>
+(10 digit number)
+</td>
+</tr>
+ 
+<!----- Gender ----------------------------------------------------------->
+<tr>
+<td>GENDER</td>
+<td>
+<input type="radio" name="gender" value="Male" />Male 
+<input type="radio" name="gender" value="Female" />Female 
+</td>
+</tr>
+ 
+<!----- Address ---------------------------------------------------------->
+<tr>
+<td>ADDRESS <br /><br /><br /></td>
+<td><textarea name="address" rows="4" cols="30"></textarea></td>
+</tr>
+ 
+<!----- City ---------------------------------------------------------->
+<!-- <tr>
+<td>CITY</td>
+<td><input type="text" name="City" maxlength="30" />
+(max 30 characters a-z and A-Z)
+</td>
+</tr> -->
+ 
+<!----- Pin Code ---------------------------------------------------------->
+<tr>
+<td>PIN CODE</td>
+<td><input type="text" name="pin" id="ipin" maxlength="6" />
+(6 digit number)
+</td>
+</tr>
+ 
+<!----- State ---------------------------------------------------------->
+<tr>
+<td>PASSWORD</td>
+<td><input type="password" name="password" id="pass" maxlength="12" required/>
+<!-- (max 30 characters a-z and A-Z) -->
+</td>
+</tr>
+ 
+<!----- Country ---------------------------------------------------------->
+<tr>
+<td>CONFIRM PASSWORD</td>
+<td><input type="password" name="cpassword" id="cpass" required></td>
+</tr>
+   
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+  <!-- <button type="button" class="btn btn-outline-success"><a href="/recipientlogin">Submit</a></button> -->
+  <input type="submit" value="Submit">
+
+</td>
+</tr>
+</table>
+
+<!-- <button  type="button" class="w3-button w3-green" value="Submit">Submit</button>
+<button type="button" class="w3-button w3-light-green" value="Reset">Reset</button> -->
+ 
+</form>
+</center>
+</body>
+<script>
+  function validateForm(){
+    var returnval=true;
+    clearErrors();
+    var finame=document.forms['recipt']["fname"].value;
+    if(finame.length==0){
+        alert("first name must be filled out");
+        return false;  
+    }
+
+    var liname=document.forms['recipt']["lname"].value;
+    if(liname.length==0){
+        alert("last name must be filled out");
+        return false; 
+    } 
+
+    var mail=document.forms['recipt']["email"].value;
+    if(mail.length==0){
+        alert("Email required!");
+        return false;
+    }
+
+    var numb=document.forms['recipt']["mnumb"].value;
+    if(numb.length<10){
+        alert("Mobile number Invalid!");
+        return false;
+    }
+
+    // var pass = document.getElementById("password");  
+    // var cpass = document.getElementById("cpassword"); 
+    var pass = document.forms['recipt']["password"].value;  
+    var cpass = document.forms['recipt']["cpassword"].value;  
+    if(pass != cpass)  
+    {   
+      alert("Passwords did not match");  
+    } else {  
+      alert("Password created successfully");  
+  }  
+
+  }
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	setTimeout(function(){
+		$('.loader_bg').fadeToggle();
+	}, 1600);
+  </script>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
+
+reclogin.html
+---------------
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Recipient Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="../static/logincss.css">
+
+</head>
+<center><h4>{{msg}}</h4></center>
+<body>
+  <div class="loader_bg">
+    <div class="loader"></div>
+    </div>
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <h2>Recipient Login</h2>
+  <form id="login-form">
+    <p>
+    <input type="text" id="email" name="email" placeholder="email" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="password" id="password" name="password" placeholder="password" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <!-- <button type="submit" id="login" class="btn btn-primary" value="Login">LOGIN</button> -->
+    <a href="/recipient">
+      <button type="button" class="btn btn-success">Log in</button>
+      </a>
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p>Are you New ? <a href="/recipregistration">Create Account</a><p>
+  </div><!--create-account-wrap-->
+</div><!--login-form-wrap-->
+<!-- partial -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  setTimeout(function(){
+      $('.loader_bg').fadeToggle();
+  }, 1600);
+</script>
+</body>
+</html>
+
+app.py 
+---------------
+from flask import Flask,render_template,request,url_for,redirect
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')      # index - home page
+
+# admin credentials
+
+@app.route('/adminlogin')
+def adminlogin():
+  return render_template('adminlogin.html')   # admin log in page
+
+@app.route('/adminreg')
+def adminreg():
+  return render_template('adminreg.html')  # admin sign up page
+
+
+@app.route('/recipregistration')
+def recipregistration():
+  return render_template('recipregistration.html')   ## recipient signup page uh
+
+@app.route('/recipientlogin')
+def recipientlogin():
+  return render_template('reclogin.html')  
+
+@app.route('/donregistration')
+def donregistration():
+  return render_template('donregistration.html')   ## donar signup page uh
+
+
+@app.route('/donarlogin')
+def donarlogin():
+  return render_template('donlogin.html') 
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
