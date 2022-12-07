@@ -20,7 +20,10 @@ In a plasma-only donation, the liquid portion of the donor’s blood is separate
 Many of them need plasma if we donate plasma to others it will be useful for others and us also.
 
 SOFTWARE REQUIRED:
+
 Python, Flask , Docker
+
 System Required:
+
 8GB RAM,Intel Core i3,OS-Windows/Linux/MAC ,Laptop or Desktop
 During the COVID 19 crisis, the requirement of plasma became a high priority and the donor count has become low. Saving the donor information and helping the needy by notifying the current donors list, would be a helping hand. In regard to the problem faced, an application is to be built which would take the donor details, store them and inform them upon a request.
